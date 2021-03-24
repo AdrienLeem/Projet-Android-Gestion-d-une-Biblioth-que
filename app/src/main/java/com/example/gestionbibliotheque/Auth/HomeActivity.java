@@ -1,4 +1,4 @@
-package com.example.gestionbibliotheque;
+package com.example.gestionbibliotheque.Auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -11,9 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gestionbibliotheque.Admin.AdminHomeActivity;
-import com.example.gestionbibliotheque.Auth.LoginActivity;
-import com.example.gestionbibliotheque.Auth.RegisterActivity;
 import com.example.gestionbibliotheque.DB.DataBaseHelper;
+import com.example.gestionbibliotheque.R;
 import com.example.gestionbibliotheque.User.UserHomeActivity;
 
 import java.io.UnsupportedEncodingException;

@@ -9,8 +9,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.gestionbibliotheque.DB.DataBaseHelper;
-import com.example.gestionbibliotheque.HomeActivity;
-import com.example.gestionbibliotheque.MainActivity;
 import com.example.gestionbibliotheque.R;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

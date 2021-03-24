@@ -12,10 +12,9 @@
         <activity android:name=".Admin.AddBookActivity"></activity>
         <activity android:name=".User.UserHomeActivity" />
         <activity android:name=".Admin.AdminHomeActivity" />
-        <activity android:name=".Auth.LoginActivity" />
         <activity android:name=".Auth.RegisterActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Auth.HomeActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
