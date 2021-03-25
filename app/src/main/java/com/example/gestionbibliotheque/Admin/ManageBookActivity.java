@@ -17,6 +17,9 @@ public class ManageBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_book);
 
+        bAddBook = findViewById(R.id.buttonAddBook);
+        bDeleteBook = findViewById(R.id.buttonDeleteBook);
+        bEditBook = findViewById(R.id.buttonEditBook);
         back = findViewById(R.id.buttonBack6);
 
         back.setOnClickListener(view -> {
@@ -25,12 +28,14 @@ public class ManageBookActivity extends AppCompatActivity {
             finish();
         });
 
-        bAddBook = findViewById(R.id.buttonAddBook);
-        bDeleteBook = findViewById(R.id.buttonDeleteBook);
-        bEditBook = findViewById(R.id.buttonEditBook);
-
         bAddBook.setOnClickListener(View -> {
             Intent i = new Intent(getApplicationContext(), AddBookActivity.class);
+            startActivity(i);
+            finish();
+        });
+
+        bDeleteBook.setOnClickListener(View -> {
+            Intent i = new Intent(getApplicationContext(), DeleteBookActivity.class);
             startActivity(i);
             finish();
         });

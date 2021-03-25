@@ -50,7 +50,7 @@ public class DetailBookActivity extends AppCompatActivity {
         if(intent != null) {
             if (intent.hasExtra("BookID")) {
                 String ID = intent.getStringExtra("BookID");
-                Cursor resBook = DB.getBookbyID(ID);
+                Cursor resBook = DB.getBookByID(ID);
                 if (resBook.getCount() != 0) {
                     ArrayList<Book> book = new ArrayList<>();
                     while (resBook.moveToNext()) {

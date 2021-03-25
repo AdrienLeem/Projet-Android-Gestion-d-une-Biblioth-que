@@ -113,9 +113,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return db.rawQuery( "select * from " + TABLE_NAME_BOOK, null );
     }
 
-    public Cursor getBookbyID(String idBook) {
+    public Cursor getBookByID(String idBook) {
         SQLiteDatabase db = getWritableDatabase();
         return db.rawQuery( "select Title, Author, Category, Publish_date, Image_name from " + TABLE_NAME_BOOK + " where ID = ?", new String[] { idBook } );
+    }
+
+    public Cursor getBookByTitle(String title) {
+        SQLiteDatabase db = getWritableDatabase();
+        return db.rawQuery( "select ID from " + TABLE_NAME_BOOK + " where Title = ?", new String[] { title } );
     }
 
     public Cursor getAllUsername() {
@@ -146,6 +151,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             }
             return listAdmin.contains("1");
         } else return false;
+    }
+
+    public Integer deleteBook(String id) {
+        SQLiteDatabase db = getWritableDatabase();
+        return db.delete(TABLE_NAME_BOOK, "ID = ?", new String [] { id } );
     }
 
     //Update fields of database using ID (Unique identifier)
