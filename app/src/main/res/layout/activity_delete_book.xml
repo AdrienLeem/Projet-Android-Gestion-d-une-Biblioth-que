@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.DeleteBookActivity">
+    tools:context=".Admin.DeleteBookActivity"
+    android:background="#2c2f33">
 
     <Button
         android:id="@+id/buttonBack7"
@@ -22,35 +23,57 @@
 
     <TextView
         android:id="@+id/TVTitleDB"
-        android:layout_width="wrap_content"
+        style="@style/TitreStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="38dp"
         android:text="Supprimer un livre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextDeleteBook"
-        android:layout_width="wrap_content"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#23272a"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Titre du livre"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVTitleDB" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
+        style="@style/BoutonStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="Supprimer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDeleteBook" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDeleteBook"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
