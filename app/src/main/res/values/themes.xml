@@ -27,6 +27,18 @@
         <item name="android:textColor">#6F7278</item>
     </style>
 
+    <!-- > Catégorie -->
+    <style name="infoCategory">
+        <item name="android:textColor">#6F7278</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- > Réponse Catégorie -->
+    <style name="RepCategorie">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- > EditText -->
     <style name="EditTextStyle">
         <item name="android:textColorHint">#6F7278</item>
