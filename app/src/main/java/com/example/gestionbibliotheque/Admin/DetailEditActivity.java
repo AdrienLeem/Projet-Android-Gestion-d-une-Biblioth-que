@@ -82,7 +82,7 @@ public class DetailEditActivity extends AppCompatActivity {
         });
 
         IVImage.setOnClickListener(view -> {
-            if (view.getId() == R.id.imageViewUpload) {
+            if (view.getId() == R.id.imageViewUpload2) {
                 Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(gallery, RESULT_LOAD_IMAGE);
             }

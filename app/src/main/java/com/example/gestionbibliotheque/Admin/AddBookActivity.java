@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gestionbibliotheque.Auth.RegisterActivity;
 import com.example.gestionbibliotheque.DB.DataBaseHelper;
 import com.example.gestionbibliotheque.R;
 
@@ -40,13 +39,13 @@ public class AddBookActivity extends AppCompatActivity {
         DB = new DataBaseHelper(this);
 
         TVTitle = findViewById(R.id.TVTitleAB);
-        TVUpload = findViewById(R.id.TVUploadImage);
-        ETTitle = findViewById(R.id.editTextTitle);
-        ETAuthor = findViewById(R.id.editTextAuthor);
-        ETCategory = findViewById(R.id.editTextCategory);
-        ETPublish_date = findViewById(R.id.editTextPublish);
-        IVImage = findViewById(R.id.imageViewUpload);
-        bAdd = findViewById(R.id.buttonAdd);
+        TVUpload = findViewById(R.id.TVUploadImage2);
+        ETTitle = findViewById(R.id.editTextTitle2);
+        ETAuthor = findViewById(R.id.editTextAuthor2);
+        ETCategory = findViewById(R.id.editTextCategory2);
+        ETPublish_date = findViewById(R.id.editTextPublish2);
+        IVImage = findViewById(R.id.imageViewUpload2);
+        bAdd = findViewById(R.id.buttonEdit2);
         bBack = findViewById(R.id.buttonBack3);
 
         bBack.setOnClickListener(view -> {
@@ -56,7 +55,7 @@ public class AddBookActivity extends AppCompatActivity {
         });
 
         IVImage.setOnClickListener(view -> {
-            if (view.getId() == R.id.imageViewUpload) {
+            if (view.getId() == R.id.imageViewUpload2) {
                 Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(gallery, RESULT_LOAD_IMAGE);
             }
