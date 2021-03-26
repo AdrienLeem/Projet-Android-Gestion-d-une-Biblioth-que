@@ -56,6 +56,7 @@ public class AdminHomeActivity extends AppCompatActivity {
             }
         }
 
+        username = preferences.getString("Username", "");
         TVWelcome.setText("Bonjour, " + preferences.getString("Username", ""));
 
         bGererLivre.setOnClickListener(view -> {
@@ -72,6 +73,7 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         bConsult.setOnClickListener(View -> {
             Intent i = new Intent(getApplicationContext(), ConsultBookActivity.class);
+            i.putExtra("user", username);
             startActivity(i);
             finish();
         });

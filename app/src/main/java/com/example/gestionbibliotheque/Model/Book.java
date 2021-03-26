@@ -6,10 +6,10 @@ public class Book {
 
     public Book(String ID, String title, String author, String category, String publish_date, byte[] image) {
         this.ID = ID;
-        Title = title;
-        Author = author;
-        Category = category;
-        Publish_date = publish_date;
+        this.Title = title;
+        this.Author = author;
+        this.Category = category;
+        this.Publish_date = publish_date;
         this.image = image;
     }
 
@@ -35,5 +35,29 @@ public class Book {
 
     public byte[] getImage() {
         return image;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public void setAuthor(String author) {
+        Author = author;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
+    }
+
+    public void setPublish_date(String publish_date) {
+        Publish_date = publish_date;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }

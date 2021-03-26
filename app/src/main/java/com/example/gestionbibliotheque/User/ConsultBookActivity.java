@@ -37,10 +37,7 @@ public class ConsultBookActivity extends AppCompatActivity {
 
         Cursor res = DB.getAllDataBook();
 
-        if (res.getCount() == 0){
-            Toast.makeText( ConsultBookActivity.this, "Erreur !", Toast.LENGTH_SHORT ).show();
-        }
-        else{
+        if (!(res.getCount() == 0)){
             while (res.moveToNext()){
                 Book book = new Book(res.getString( 0 ), res.getString( 1 ), res.getString( 2 ), res.getString( 3 ), res.getString( 4 ), res.getBlob( 5 ));
                 listBook.add(book);
@@ -62,7 +59,8 @@ public class ConsultBookActivity extends AppCompatActivity {
         user = preferences.getString("Username", "");
 
         bBack.setOnClickListener(View -> {
-            if (user.equals("")) {
+            if (user.equals("")) Toast.makeText( ConsultBookActivity.this, "Erreur !", Toast.LENGTH_SHORT ).show();
+            else {
                 if (DB.isAdmin(DB.getAdminByUser(user))) {
                     Intent i = new Intent(getApplicationContext(), AdminHomeActivity.class);
                     startActivity(i);
@@ -74,7 +72,6 @@ public class ConsultBookActivity extends AppCompatActivity {
                     finish();
                 }
             }
-            else Toast.makeText( ConsultBookActivity.this, "Erreur !", Toast.LENGTH_SHORT ).show();
         });
     }
 }

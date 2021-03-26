@@ -43,7 +43,7 @@ public class ListViewBookAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.activity_list_view, null);
+            convertView = layoutInflater.inflate(R.layout.activity_list_view_book, null);
             holder = new ViewHolder();
             holder.image = (ImageView) convertView.findViewById(R.id.imageView_book);
             holder.title = (TextView) convertView.findViewById(R.id.textViewListTitle);

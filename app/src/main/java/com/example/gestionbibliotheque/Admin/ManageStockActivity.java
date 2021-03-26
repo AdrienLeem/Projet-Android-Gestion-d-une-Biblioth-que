@@ -3,6 +3,7 @@ package com.example.gestionbibliotheque.Admin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -29,6 +30,18 @@ public class ManageStockActivity extends AppCompatActivity {
 
         bCommande.setOnClickListener(View -> {
             Intent i = new Intent(getApplicationContext(), CommandBookActivity.class);
+            startActivity(i);
+            finish();
+        });
+
+        bConsult.setOnClickListener(View -> {
+            Intent i = new Intent(getApplicationContext(), ConsultCommandActivity.class);
+            startActivity(i);
+            finish();
+        });
+
+        bEmprunt.setOnClickListener(View -> {
+            Intent i = new Intent(getApplicationContext(), EmpruntBibliothequeActivity.class);
             startActivity(i);
             finish();
         });

@@ -139,12 +139,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    public Cursor getAllDataUser(){
-        //Get the data from database
-        SQLiteDatabase db = getWritableDatabase();
-        return db.rawQuery( "select * from " + TABLE_NAME_USER, null );
-    }
-
     public Cursor getAllDataBook(){
         //Get the data from database
         SQLiteDatabase db = getWritableDatabase();
@@ -191,6 +185,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         } else return false;
     }
 
+    public Cursor getAllDataCommand() {
+        SQLiteDatabase db = getWritableDatabase();
+        return db.rawQuery( "select * from " + TABLE_NAME_COMMANDE, null );
+    }
+
     public Integer deleteBook(String id) {
         SQLiteDatabase db = getWritableDatabase();
         return db.delete(TABLE_NAME_BOOK, "ID = ?", new String [] { id } );
@@ -209,64 +208,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         db.update(TABLE_NAME_BOOK, contentValues, "ID = ?", new String[] { id } );
         return true;
-    }
-
-    //Update fields of database using ID (Unique identifier)
-    public boolean updateData(String id, String username, String password, String email){
-
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues contentValues = new ContentValues(  );
-        // When you want to update only name field
-        if(password.equals( "" ) && email.equals( "" )){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_2, username );
-        }
-        // When you want to update only surname field
-        if(username.equals( "" ) && email.equals( "" )){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_3, password );
-        }
-        // When you want to update only marks field
-        if(username.equals( "" ) && password.equals( "" )){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_4, email );
-        }
-        // When you want to update name and surname field
-        if(email.equals( "" ) && !username.isEmpty() && !password.isEmpty()){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_2, username );
-            contentValues.put(USER_COL_3, password );
-        }
-        // When you want to update marks and surname field
-        if(username.isEmpty() && !email.isEmpty() && !password.isEmpty()){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_3, password );
-            contentValues.put(USER_COL_4, email );
-        }
-        // When you want to update name and marks field
-        if(password.isEmpty() && !username.isEmpty() && !email.isEmpty()){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_2, username );
-            contentValues.put(USER_COL_4, email );
-        }
-        // When you want to update every data field
-        if(!id.isEmpty() && !username.isEmpty() && !password.isEmpty() && !email.isEmpty()){
-            contentValues.put(USER_COL_1, id );
-            contentValues.put(USER_COL_2, username );
-            contentValues.put(USER_COL_3, password );
-            contentValues.put(USER_COL_4, email );
-        }
-
-        // UPDATE query
-        db.update(TABLE_NAME_USER, contentValues, "ID = ?", new String[]{id} );
-        return true;
-    }
-
-    //Delete data from the databse using ID (Primary Key)
-    public Integer deleteData(String id){
-
-        SQLiteDatabase db = getWritableDatabase();
-        return db.delete(TABLE_NAME_USER, "ID = ?", new String [] {id} );
     }
 }
