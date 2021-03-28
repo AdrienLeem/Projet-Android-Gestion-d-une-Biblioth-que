@@ -2,7 +2,6 @@ package com.example.gestionbibliotheque.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -55,7 +54,7 @@ public class ConsultEmpruntActivity extends AppCompatActivity {
                 Book book = null;
                 if (!(resBook.getCount() == 0)) {
                     while (resBook.moveToNext()) {
-                        book = new Book(resEmprunt.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4));
+                        book = new Book(resEmprunt.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4), resBook.getString(5));
                     }
                 }
                 Emprunt emprunt = new Emprunt(resEmprunt.getString( 0 ), book, resEmprunt.getString( 2 ), resEmprunt.getString( 3 ));

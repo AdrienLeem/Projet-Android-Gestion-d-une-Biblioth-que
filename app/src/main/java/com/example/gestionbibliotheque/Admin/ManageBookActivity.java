@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.gestionbibliotheque.Auth.HomeActivity;
 import com.example.gestionbibliotheque.R;
 
 public class ManageBookActivity extends AppCompatActivity {

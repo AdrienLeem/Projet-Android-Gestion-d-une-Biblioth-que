@@ -57,6 +57,7 @@ public class ListViewBookAdapter extends BaseAdapter {
         Book book = this.listData.get(position);
         holder.title.setText(book.getTitle());
         holder.author.setText(book.getAuthor());
+        holder.description.setText(book.getDescription());
         byte[] bookImage = book.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(bookImage, 0, bookImage.length);
         holder.image.setImageBitmap(bitmap);

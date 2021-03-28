@@ -24,11 +24,11 @@ public class AddBookActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE = 1;
 
     TextView TVTitle, TVUpload;
-    EditText ETTitle, ETAuthor, ETCategory, ETPublish_date;
+    EditText ETTitle, ETAuthor, ETCategory, ETPublish_date, ETDescription;
     ImageView IVImage;
     Button bAdd, bBack;
     DataBaseHelper DB;
-    String title, author, category, publish;
+    String title, author, category, publish, description;
     byte[] img;
 
     @Override
@@ -44,6 +44,7 @@ public class AddBookActivity extends AppCompatActivity {
         ETAuthor = findViewById(R.id.editTextAuthor2);
         ETCategory = findViewById(R.id.editTextCategory2);
         ETPublish_date = findViewById(R.id.editTextPublish2);
+        ETDescription = findViewById(R.id.editTextDescription2);
         IVImage = findViewById(R.id.imageViewUpload2);
         bAdd = findViewById(R.id.buttonEdit2);
         bBack = findViewById(R.id.buttonBack3);
@@ -66,7 +67,8 @@ public class AddBookActivity extends AppCompatActivity {
             author = ETAuthor.getText().toString();
             category = ETCategory.getText().toString();
             publish = ETPublish_date.getText().toString();
-            if (title.isEmpty() || author.isEmpty() || category.isEmpty() || publish.isEmpty() || IVImage.getDrawable() == null) {
+            description = ETDescription.getText().toString();
+            if (title.isEmpty() || author.isEmpty() || category.isEmpty() || publish.isEmpty() || description.isEmpty() || IVImage.getDrawable() == null) {
                 Toast.makeText( AddBookActivity.this, "Veuillez renseigner tous les champs", Toast.LENGTH_SHORT ).show();
             }
             else {

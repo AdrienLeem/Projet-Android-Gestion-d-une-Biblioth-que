@@ -44,7 +44,7 @@ public class ConsultBookActivity extends AppCompatActivity {
                 category = intent.getStringExtra("category");
                 Cursor resBook = DB.getBookBySearch(title, author, category);
                 while (resBook.moveToNext()) {
-                    Book b = new Book(resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getString(4), resBook.getBlob(5));
+                    Book b = new Book(resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getString(4), resBook.getBlob(5), resBook.getString(6));
                     listBook.add(b);
                 }
             }
@@ -52,7 +52,7 @@ public class ConsultBookActivity extends AppCompatActivity {
                 Cursor res = DB.getAllDataBook();
                 if (!(res.getCount() == 0)){
                     while (res.moveToNext()){
-                        Book book = new Book(res.getString( 0 ), res.getString( 1 ), res.getString( 2 ), res.getString( 3 ), res.getString( 4 ), res.getBlob( 5 ));
+                        Book book = new Book(res.getString( 0 ), res.getString( 1 ), res.getString( 2 ), res.getString( 3 ), res.getString( 4 ), res.getBlob( 5 ), res.getString(6));
                         listBook.add(book);
                     }
                 }

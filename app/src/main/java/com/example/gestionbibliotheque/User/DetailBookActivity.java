@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gestionbibliotheque.Admin.DetailEditActivity;
 import com.example.gestionbibliotheque.DB.DataBaseHelper;
 import com.example.gestionbibliotheque.Model.Book;
 import com.example.gestionbibliotheque.R;
@@ -27,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class DetailBookActivity extends AppCompatActivity {
-    TextView TVDTtile, TVDAuthor, TVDCategory, TVDPublish;
+    TextView TVDTtile, TVDAuthor, TVDCategory, TVDPublish, TVDescription, TVEmprunt;
     EditText dateEmprunt;
     ImageView IVDetail;
     Button bBack, bEmprunt;
@@ -44,6 +43,8 @@ public class DetailBookActivity extends AppCompatActivity {
         TVDAuthor = findViewById(R.id.textViewDetailAuthor);
         TVDCategory = findViewById(R.id.textViewDetailCategory);
         TVDPublish = findViewById(R.id.textViewDetailPublish);
+        TVDescription = findViewById(R.id.textViewDetailDescription);
+        TVEmprunt = findViewById(R.id.textViewEmprunt);
         dateEmprunt = findViewById(R.id.editTextDateEmprunt);
         IVDetail = findViewById(R.id.imageViewDetail);
         bBack = findViewById(R.id.bBack1);
@@ -59,6 +60,7 @@ public class DetailBookActivity extends AppCompatActivity {
         if (DB.isAdmin(DB.getAdminByUser(username))) {
             bEmprunt.setVisibility(View.GONE);
             dateEmprunt.setVisibility(View.GONE);
+            TVEmprunt.setVisibility(View.GONE);
         }
 
         if(intent != null) {
@@ -67,13 +69,14 @@ public class DetailBookActivity extends AppCompatActivity {
                 Cursor resBook = DB.getBookByID(ID);
                 if (resBook.getCount() != 0) {
                     while (resBook.moveToNext()) {
-                        Book b = new Book(ID, resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4));
+                        Book b = new Book(ID, resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4), resBook.getString(5));
                         book.add(b);
                     }
                     TVDTtile.setText(book.get(0).getTitle());
                     TVDAuthor.setText(book.get(0).getAuthor());
                     TVDCategory.setText(book.get(0).getCategory());
                     TVDPublish.setText(book.get(0).getPublish_date());
+                    TVDescription.setText(book.get(0).getDescription());
                     byte[] bookImage = book.get(0).getImage();
                     Bitmap bitmap = BitmapFactory.decodeByteArray(bookImage, 0, bookImage.length);
                     IVDetail.setImageBitmap(bitmap);

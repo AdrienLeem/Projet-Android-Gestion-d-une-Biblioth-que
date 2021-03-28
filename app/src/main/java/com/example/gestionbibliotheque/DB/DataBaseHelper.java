@@ -208,7 +208,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public Cursor getBookBySearch(String title, String author, String category) {
         SQLiteDatabase db = getWritableDatabase();
-        return db.rawQuery( "select ID, Title, Author, Category, Publish_date, Image_name from " + TABLE_NAME_BOOK + " where Title LIKE ? AND Author LIKE ? AND Category LIKE ?", new String[] { "%" + title + "%", "%" + author + "%", "%" + category + "%" } );
+        return db.rawQuery( "select ID, Title, Author, Category, Publish_date, Image_name, Description from " + TABLE_NAME_BOOK + " where Title LIKE ? AND Author LIKE ? AND Category LIKE ?", new String[] { "%" + title + "%", "%" + author + "%", "%" + category + "%" } );
     }
 
     public Cursor getAllDataCommand() {

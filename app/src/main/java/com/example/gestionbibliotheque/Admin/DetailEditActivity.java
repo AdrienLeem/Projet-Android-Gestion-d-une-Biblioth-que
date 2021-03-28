@@ -28,11 +28,11 @@ public class DetailEditActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE = 1;
 
     TextView TVTitle, TVUpload;
-    EditText ETTitle, ETAuthor, ETCategory, ETPublish_date;
+    EditText ETTitle, ETAuthor, ETCategory, ETPublish_date, ETDescription;
     ImageView IVImage;
     Button bEdit, bBack;
     DataBaseHelper DB;
-    String id, title, author, category, publish;
+    String id, title, author, category, publish, description;
     byte[] img;
 
     @Override
@@ -48,6 +48,7 @@ public class DetailEditActivity extends AppCompatActivity {
         ETAuthor = findViewById(R.id.editTextAuthor2);
         ETCategory = findViewById(R.id.editTextCategory2);
         ETPublish_date = findViewById(R.id.editTextPublish2);
+        ETDescription = findViewById(R.id.editTextDescription2);
         IVImage = findViewById(R.id.imageViewUpload2);
         bEdit = findViewById(R.id.buttonEdit2);
         bBack = findViewById(R.id.buttonBack9);
@@ -61,13 +62,14 @@ public class DetailEditActivity extends AppCompatActivity {
                 if (res.getCount() != 0) {
                     ArrayList<Book> book = new ArrayList<>();
                     while (res.moveToNext()) {
-                        Book b = new Book(id, res.getString(0), res.getString(1), res.getString(2), res.getString(3), res.getBlob(4));
+                        Book b = new Book(id, res.getString(0), res.getString(1), res.getString(2), res.getString(3), res.getBlob(4), res.getString(5));
                         book.add(b);
                     }
                     ETTitle.setText(book.get(0).getTitle());
                     ETAuthor.setText(book.get(0).getAuthor());
                     ETCategory.setText(book.get(0).getCategory());
                     ETPublish_date.setText(book.get(0).getPublish_date());
+                    ETDescription.setText(book.get(0).getDescription());
                     byte[] bookImage = book.get(0).getImage();
                     Bitmap bitmap = BitmapFactory.decodeByteArray(bookImage, 0, bookImage.length);
                     IVImage.setImageBitmap(bitmap);
@@ -93,11 +95,12 @@ public class DetailEditActivity extends AppCompatActivity {
             author = ETAuthor.getText().toString();
             category = ETCategory.getText().toString();
             publish = ETPublish_date.getText().toString();
+            description = ETDescription.getText().toString();
             img = imageViewToByte(IVImage);
-            if (title.isEmpty() || author.isEmpty() || category.isEmpty() || publish.isEmpty() || IVImage.getDrawable() == null) {
+            if (title.isEmpty() || author.isEmpty() || category.isEmpty() || publish.isEmpty() || description.isEmpty() || IVImage.getDrawable() == null) {
                 Toast.makeText(DetailEditActivity.this, "Veuillez renseigner tous les champs", Toast.LENGTH_SHORT).show();
             } else {
-                boolean isUpdated = DB.updateBook(id, title, author, category, publish, img);
+                boolean isUpdated = DB.updateBook(id, title, author, category, publish, img, description);
                 if (isUpdated) {
                     Toast.makeText(DetailEditActivity.this, "Votre livre à bien été modifié", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), EditBookActivity.class);

@@ -57,7 +57,7 @@ public class DetailEmpruntActivity extends AppCompatActivity {
                     Book book = null;
                     if (!(resBook.getCount() == 0)) {
                         while (resBook.moveToNext()) {
-                            book = new Book(resEmprunt.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4));
+                            book = new Book(resEmprunt.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4), resBook.getString(5));
                         }
                     }
                     emprunt = new Emprunt(resEmprunt.getString( 0 ), book, resEmprunt.getString( 2 ), resEmprunt.getString( 3 ));
@@ -115,7 +115,7 @@ public class DetailEmpruntActivity extends AppCompatActivity {
                     Cursor resBook = DB.getBookByID(res.getString(2));
                     if (!(resBook.getCount() == 0)) {
                         while (resBook.moveToNext()) {
-                            book = new Book(res.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4));
+                            book = new Book(res.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4), resBook.getString(5));
                         }
                     }
                     date_fin = res.getString(4);

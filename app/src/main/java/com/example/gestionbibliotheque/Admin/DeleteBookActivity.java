@@ -9,11 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.gestionbibliotheque.Auth.HomeActivity;
 import com.example.gestionbibliotheque.DB.DataBaseHelper;
-import com.example.gestionbibliotheque.Model.Book;
 import com.example.gestionbibliotheque.R;
-import com.example.gestionbibliotheque.User.ConsultBookActivity;
 
 import java.util.ArrayList;
 

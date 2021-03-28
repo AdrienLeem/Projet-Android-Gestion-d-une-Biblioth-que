@@ -10,10 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.gestionbibliotheque.DB.DataBaseHelper;
-import com.example.gestionbibliotheque.Model.Book;
 import com.example.gestionbibliotheque.R;
-
-import java.util.ArrayList;
 
 public class SearchBookActivity extends AppCompatActivity {
     Button bBack, bSearch;
