@@ -39,11 +39,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberTemps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEmprunt1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmprunt1" />
 
     <TextView
         android:id="@+id/textView5"
@@ -52,14 +50,12 @@
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="80dp"
         android:text="AJOUTEZ DES JOURS D'EMPRUNT"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberTemps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEmprunt2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmprunt2" />
 
     <Button
         android:id="@+id/buttonRappel"
@@ -70,14 +66,11 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="248dp"
         android:text="Définir un rappel"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAjoutTemps"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAjoutTemps" />
 
     <Button
         android:id="@+id/buttonAjoutTemps"
@@ -89,12 +82,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Ajouter"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberTemps" />
 
     <EditText
         android:id="@+id/editTextNumberTemps"
@@ -105,16 +96,15 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
         android:background="#23272a"
         android:ems="10"
         android:hint="Nombre de jours"
         android:inputType="number"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAjoutTemps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView9"
