@@ -60,7 +60,7 @@ public class DetailEmpruntActivity extends AppCompatActivity {
                             book = new Book(resEmprunt.getString(2), resBook.getString(0), resBook.getString(1), resBook.getString(2), resBook.getString(3), resBook.getBlob(4), resBook.getString(5));
                         }
                     }
-                    emprunt = new Emprunt(resEmprunt.getString( 0 ), book, resEmprunt.getString( 2 ), resEmprunt.getString( 3 ));
+                    emprunt = new Emprunt(resEmprunt.getString( 0 ), book, resEmprunt.getString( 3 ), resEmprunt.getString( 4 ));
                 }
             }
             TVEmpruntTitle.setText("Emprunt de " + emprunt.getBook().getTitle());

@@ -38,15 +38,15 @@ public class ListViewEmpruntAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        ListViewCommandAdapter.ViewHolder holder;
+        ListViewEmpruntAdapter.ViewHolder holder;
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.activity_list_view_emprunt, null);
-            holder = new ListViewCommandAdapter.ViewHolder();
+            holder = new ListViewEmpruntAdapter.ViewHolder();
             holder.title = (TextView) convertView.findViewById(R.id.textViewListTitle3);
             holder.date = (TextView) convertView.findViewById(R.id.textViewListDate2);
             convertView.setTag(holder);
         } else {
-            holder = (ListViewCommandAdapter.ViewHolder) convertView.getTag();
+            holder = (ListViewEmpruntAdapter.ViewHolder) convertView.getTag();
         }
 
         Emprunt emprunt = this.listData.get(position);
